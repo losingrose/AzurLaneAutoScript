@@ -246,7 +246,7 @@
     },
     "Enable": {
       "name": "启用该功能",
-      "help": "将这个任务加入调度器"
+      "help": "将这个任务加入调度器\n委托、科研、收获任务是强制打开的"
     },
     "NextRun": {
       "name": "下一次运行时间",
@@ -376,33 +376,56 @@
       "name": "AzurStat ID",
       "help": "上传至 https://azur-stats.lyoko.io 时，声明的客户端 ID\n由随机字符组成，可随意修改"
     },
-    "SaveResearch": {
-      "name": "保存科研截图",
-      "help": ""
+    "API": {
+      "name": "上传线路",
+      "help": "如果国内用户无法连接到 AzurStat，可以使用\"国内反向代理\"",
+      "default": "默认 (Cloudflare)",
+      "cn_gz_reverse_proxy": "国内反向代理 (广州)",
+      "cn_sh_reverse_proxy": "国内反向代理 (上海)"
     },
-    "UploadResearch": {
-      "name": "上传科研截图",
-      "help": ""
+    "ResearchRecord": {
+      "name": "科研截图",
+      "help": "",
+      "do_not": "无操作",
+      "save": "保存",
+      "upload": "上传",
+      "save_and_upload": "保存并上传"
     },
-    "SaveCommission": {
-      "name": "保存委托截图",
-      "help": ""
+    "CommissionRecord": {
+      "name": "委托截图",
+      "help": "",
+      "do_not": "无操作",
+      "save": "保存",
+      "upload": "上传",
+      "save_and_upload": "保存并上传"
     },
-    "UploadCommission": {
-      "name": "上传委托截图",
-      "help": ""
+    "CombatRecord": {
+      "name": "战斗掉落截图",
+      "help": "启用后会放缓结算时的点击速度\n在自律寻敌下不生效",
+      "do_not": "无操作",
+      "save": "保存"
     },
-    "SaveCombat": {
-      "name": "保存战斗掉落截图",
-      "help": "启用后会放缓结算时的点击速度\n在自律寻敌下不生效"
+    "OpsiRecord": {
+      "name": "大世界掉落截图",
+      "help": "",
+      "do_not": "无操作",
+      "save": "保存",
+      "upload": "上传",
+      "save_and_upload": "保存并上传"
     },
-    "SaveOpsi": {
-      "name": "保存大世界掉落截图",
-      "help": ""
+    "MeowfficerBuy": {
+      "name": "指挥喵购买截图",
+      "help": "",
+      "do_not": "无操作",
+      "save": "保存"
     },
-    "UploadOpsi": {
-      "name": "上传大世界掉落截图",
-      "help": ""
+    "MeowfficerTalent": {
+      "name": "指挥喵天赋截图",
+      "help": "",
+      "do_not": "无操作",
+      "save": "保存",
+      "upload": "上传",
+      "save_and_upload": "保存并上传"
     }
   },
   "Retirement": {
@@ -437,7 +460,7 @@
     },
     "EnhanceCheckPerCategory": {
       "name": "每分类强化数量",
-      "help": "每个舰船分类最多强化多少舰船，\n在战斗中的舰船会被跳过且不计入"
+      "help": "每个舰船分类最多强化多少舰船，\n在战斗中的舰船会被跳过且不计入，\n优先判断是否有强化材料"
     },
     "OldRetireN": {
       "name": "退役白皮 ( N )",
@@ -469,6 +492,8 @@
       "name": "活动名称",
       "help": "自动选择至最新的活动",
       "campaign_main": "主线图",
+      "raid_20200624": "复刻特别演习埃塞克斯级",
+      "event_20220428_cn": "虹彩的终幕曲",
       "event_20220414_cn": "复刻永夜幻光",
       "event_20220407_tw": "蒼紅的迴響(復刻)",
       "event_20210422_cn": "复兴的赞美诗",
@@ -510,7 +535,6 @@
       "event_20201002_en": "Counterattack Within the Fjord",
       "event_20200820_cn": "复刻铁血音符誓言",
       "event_20200716_en": "Ink Stained Steel Sakura Rerun",
-      "raid_20200624": "复刻特别演习埃塞克斯级",
       "event_20200611_en": "Skybound Oratorio",
       "event_20200603_en": "Prelude under the Moon Rerun",
       "event_20200521_en": "Iris of Light and Dark Rerun",
@@ -577,10 +601,10 @@
       "name": "达成关卡成就后停止",
       "help": "达成地图 100% 通关，达成三星通关，达成安全海域，\n或达成安全海域但不打三星后停止",
       "non_stop": "否",
-      "100_percent_clear": "地图通关",
-      "map_3_stars": "地图三星",
-      "threat_safe": "地图绿海",
-      "threat_safe_without_3_stars": "地图绿海不打三星"
+      "100_percent_clear": "100%通关",
+      "map_3_stars": "100%通关 + 三星",
+      "threat_safe": "100%通关 + 三星 + 安全海域",
+      "threat_safe_without_3_stars": "100%通关 + 安全海域"
     },
     "StageIncrease": {
       "name": "达成关卡成就后前往下一关卡，不停止",
@@ -1065,21 +1089,24 @@
       "name": "使用魔方",
       "help": "",
       "always_use": "总是使用",
-      "only_05_hour": "仅0.5小时科研使用",
+      "only_05_hour": "0.5小时+无项目可做时",
+      "only_no_project": "无项目可做时",
       "do_not_use": "不使用"
     },
     "UseCoin": {
       "name": "使用物资",
       "help": "",
       "always_use": "总是使用",
-      "only_05_hour": "仅0.5小时科研使用",
+      "only_05_hour": "0.5小时+无项目可做时",
+      "only_no_project": "无项目可做时",
       "do_not_use": "不使用"
     },
     "UsePart": {
       "name": "使用部件",
       "help": "",
       "always_use": "总是使用",
-      "only_05_hour": "仅0.5小时科研使用",
+      "only_05_hour": "0.5小时+无项目可做时",
+      "only_no_project": "无项目可做时",
       "do_not_use": "不使用"
     },
     "PresetFilter": {
@@ -1674,9 +1701,9 @@
       "name": "任意舰船血量低于 X 后，回港修理",
       "help": "0.0 ~ 1.0"
     },
-    "BuyAkashiShop": {
-      "name": "买明石商店",
-      "help": ""
+    "DoRandomMapEvent": {
+      "name": "完成地图随机事件",
+      "help": "在自律寻敌完成后重新扫描一遍地图，购买明石商店，使用塞壬信息收集装置、使用塞壬探测装置、解锁两舰队机关"
     },
     "AkashiShopFilter": {
       "name": "商店过滤器",
@@ -1842,6 +1869,10 @@
     "RepairShip": {
       "name": "靠近港口时自动修船",
       "help": "手动把队伍移动至港口后，Alas将帮助修船\n修理完成后需要在30秒内将队伍移出港口，否则将再次修船"
+    },
+    "SelectEnemy": {
+      "name": "清理附近的敌人和物资",
+      "help": "清理附近的敌人和物资，清理完后又会找到新的敌人或物资，这样通常能清理整个海域，如果有遗漏或者点击错误，需要手动解决"
     }
   },
   "Benchmark": {

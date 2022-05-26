@@ -38,13 +38,13 @@ class GeneratedConfig:
     # Group `DropRecord`
     DropRecord_SaveFolder = './screenshots'
     DropRecord_AzurStatsID = None
-    DropRecord_SaveResearch = False
-    DropRecord_UploadResearch = False
-    DropRecord_SaveCommission = False
-    DropRecord_UploadCommission = False
-    DropRecord_SaveCombat = False
-    DropRecord_SaveOpsi = False
-    DropRecord_UploadOpsi = False
+    DropRecord_API = 'default'  # default, cn_gz_reverse_proxy, cn_sh_reverse_proxy
+    DropRecord_ResearchRecord = 'do_not'  # do_not, save, upload, save_and_upload
+    DropRecord_CommissionRecord = 'do_not'  # do_not, save, upload, save_and_upload
+    DropRecord_CombatRecord = 'do_not'  # do_not, save
+    DropRecord_OpsiRecord = 'do_not'  # do_not, save, upload, save_and_upload
+    DropRecord_MeowfficerBuy = 'do_not'  # do_not, save
+    DropRecord_MeowfficerTalent = 'do_not'  # do_not, save, upload, save_and_upload
 
     # Group `Retirement`
     Retirement_Enable = True
@@ -179,9 +179,9 @@ class GeneratedConfig:
     ControlExpOverflow_T1Allow = 200
 
     # Group `Research`
-    Research_UseCube = 'only_05_hour'  # always_use, only_05_hour, do_not_use
-    Research_UseCoin = 'always_use'  # always_use, only_05_hour, do_not_use
-    Research_UsePart = 'always_use'  # always_use, only_05_hour, do_not_use
+    Research_UseCube = 'only_05_hour'  # always_use, only_05_hour, only_no_project, do_not_use
+    Research_UseCoin = 'always_use'  # always_use, only_05_hour, only_no_project, do_not_use
+    Research_UsePart = 'always_use'  # always_use, only_05_hour, only_no_project, do_not_use
     Research_PresetFilter = 'series_4_blueprint_tenrai'  # custom, series_4_blueprint_tenrai, series_4_blueprint_only, series_4_tenrai_only, series_3, series_3_than_2
     Research_CustomFilter = 'S4-Q0.5 > Q-0.5 > S4-DR0.5 > S4-PRY0.5 > DR-0.5 > PRY-0.5\n> S4-Q1 > S4-Q2\n> S4-DR2.5 > S4-G1.5\n> S4-Q4 > S4-H0.5 > S4-G4\n> S4-PRY2.5 > S4-G2.5\n> reset > S4-H1 > shortest'
 
@@ -308,7 +308,7 @@ class GeneratedConfig:
     OpsiGeneral_BuyActionPoint = False
     OpsiGeneral_OilLimit = 1000
     OpsiGeneral_RepairThreshold = 0.4
-    OpsiGeneral_BuyAkashiShop = True
+    OpsiGeneral_DoRandomMapEvent = True
     OpsiGeneral_AkashiShopFilter = 'ActionPoint > PurpleCoins'
 
     # Group `OpsiAshBeacon`
@@ -354,6 +354,7 @@ class GeneratedConfig:
 
     # Group `OpsiDaemon`
     OpsiDaemon_RepairShip = True
+    OpsiDaemon_SelectEnemy = True
 
     # Group `Benchmark`
     Benchmark_AdbScreenshot = True

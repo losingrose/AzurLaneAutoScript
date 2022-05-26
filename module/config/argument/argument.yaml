@@ -8,9 +8,15 @@ Scheduler:
   Enable: false
   NextRun: 2020-01-01 00:00:00
   Command: Alas
-  SuccessInterval: 0
-  FailureInterval: 120
-  ServerUpdate: 00:00
+  SuccessInterval:
+    value: 0
+    type: hide
+  FailureInterval:
+    value: 120
+    type: hide
+  ServerUpdate:
+    value: 00:00
+    type: hide
 Emulator:
   Serial:
     value: auto
@@ -39,13 +45,27 @@ Optimization:
 DropRecord:
   SaveFolder: ./screenshots
   AzurStatsID: null
-  SaveResearch: false
-  UploadResearch: false
-  SaveCommission: false
-  UploadCommission: false
-  SaveCombat: false
-  SaveOpsi: false
-  UploadOpsi: false
+  API:
+    value: default
+    option: [default, cn_gz_reverse_proxy, cn_sh_reverse_proxy]
+  ResearchRecord:
+    value: do_not
+    option: [do_not, save, upload, save_and_upload]
+  CommissionRecord:
+    value: do_not
+    option: [do_not, save, upload, save_and_upload]
+  CombatRecord:
+    value: do_not
+    option: [do_not, save]
+  OpsiRecord:
+    value: do_not
+    option: [do_not, save, upload, save_and_upload]
+  MeowfficerBuy:
+    value: do_not
+    option: [do_not, save]
+  MeowfficerTalent:
+    value: do_not
+    option: [do_not, save, upload, save_and_upload]
 Retirement:
   Enable: true
   RetireMode:
@@ -247,13 +267,13 @@ ControlExpOverflow:
 Research:
   UseCube:
     value: only_05_hour
-    option: [always_use, only_05_hour, do_not_use]
+    option: [always_use, only_05_hour, only_no_project, do_not_use]
   UseCoin:
     value: always_use
-    option: [always_use, only_05_hour, do_not_use]
+    option: [always_use, only_05_hour, only_no_project, do_not_use]
   UsePart:
     value: always_use
-    option: [always_use, only_05_hour, do_not_use]
+    option: [always_use, only_05_hour, only_no_project, do_not_use]
   PresetFilter:
     value: series_4_blueprint_tenrai
     option:
@@ -446,7 +466,7 @@ OpsiGeneral:
   BuyActionPoint: false
   OilLimit: 1000
   RepairThreshold: 0.4
-  BuyAkashiShop: true
+  DoRandomMapEvent: true
   AkashiShopFilter: |-
     ActionPoint > PurpleCoins
 OpsiAshBeacon:
@@ -490,6 +510,7 @@ Daemon:
   EnterMap: true
 OpsiDaemon:
   RepairShip: true
+  SelectEnemy: true
 Benchmark:
   AdbScreenshot: true
   AdbncScreenshot: true

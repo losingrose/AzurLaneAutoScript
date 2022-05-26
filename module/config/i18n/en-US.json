@@ -246,7 +246,7 @@
     },
     "Enable": {
       "name": "Enable Task",
-      "help": "Join this task to scheduler"
+      "help": "Join this task to scheduler.\nTask commission, research, reward are force to enable."
     },
     "NextRun": {
       "name": "Next Run",
@@ -376,33 +376,56 @@
       "name": "AzurStat ID",
       "help": "Used to identify your upload to <https://azur-stats.lyoko.io>, the ID consists of random characters and can be changed at any time"
     },
-    "SaveResearch": {
-      "name": "Save Research Screenshots",
-      "help": ""
+    "API": {
+      "name": "Upload API",
+      "help": "If CN users cannot connect to AzurStat, recommend to use \"reverse proxy\"",
+      "default": "Default (Cloudflare)",
+      "cn_gz_reverse_proxy": "Reverse proxy (Guangzhou, South China)",
+      "cn_sh_reverse_proxy": "Reverse proxy (Shanghai, East China)"
     },
-    "UploadResearch": {
-      "name": "Upload Research Screenshots",
-      "help": ""
+    "ResearchRecord": {
+      "name": "Research Record",
+      "help": "",
+      "do_not": "Do nothing",
+      "save": "Save",
+      "upload": "Upload",
+      "save_and_upload": "Save and upload"
     },
-    "SaveCommission": {
-      "name": "Save Commission Screenshots",
-      "help": ""
+    "CommissionRecord": {
+      "name": "Commission Record",
+      "help": "",
+      "do_not": "Do nothing",
+      "save": "Save",
+      "upload": "Upload",
+      "save_and_upload": "Save and upload"
     },
-    "UploadCommission": {
-      "name": "Upload Commissions Screenshots",
-      "help": ""
+    "CombatRecord": {
+      "name": "Combat Record",
+      "help": "",
+      "do_not": "Do nothing",
+      "save": "Save"
     },
-    "SaveCombat": {
-      "name": "Save Battle Drop Screenshots",
-      "help": "If enabled, clicks will be slowed down to ensure capture"
+    "OpsiRecord": {
+      "name": "Opsi Record",
+      "help": "",
+      "do_not": "Do nothing",
+      "save": "Save",
+      "upload": "Upload",
+      "save_and_upload": "Save and upload"
     },
-    "SaveOpsi": {
-      "name": "Save OpSi Drop Screenshots",
-      "help": ""
+    "MeowfficerBuy": {
+      "name": "Meowfficer Buy",
+      "help": "",
+      "do_not": "Do nothing",
+      "save": "Save"
     },
-    "UploadOpsi": {
-      "name": "Upload OpSi Screenshots",
-      "help": ""
+    "MeowfficerTalent": {
+      "name": "Meowfficer Talent",
+      "help": "",
+      "do_not": "Do nothing",
+      "save": "Save",
+      "upload": "Upload",
+      "save_and_upload": "Save and upload"
     }
   },
   "Retirement": {
@@ -437,7 +460,7 @@
     },
     "EnhanceCheckPerCategory": {
       "name": "Number Checked Per Category for Enhance",
-      "help": "Restrict number of ships to be checked per category before moving on to the next one if any. Ships that are in battle do not count towards this number and are skipped to the next available ship for enhancement"
+      "help": "Restrict number of ships to be checked per category before moving on to the next one if any. Unenhanceable (in battle or stat full) ships will count towards this.\nChecking existence of available material is prior.\nRecommend 3+ if have enhanceable ship in active fleet else <= 2 is generally sufficient"
     },
     "OldRetireN": {
       "name": "Retire Common",
@@ -469,6 +492,8 @@
       "name": "Event Name",
       "help": "Automatically selects to the latest event",
       "campaign_main": "campaign_main",
+      "raid_20200624": "Air Raid Drills with Essex Rerun",
+      "event_20220428_cn": "Rondo at Rainbows End",
       "event_20220414_cn": "Aurora Noctis Rerun",
       "event_20220407_tw": "蒼紅的迴響(復刻)",
       "event_20210422_cn": "Daedalian Hymn",
@@ -510,7 +535,6 @@
       "event_20201002_en": "Counterattack Within the Fjord",
       "event_20200820_cn": "Scherzo of Iron and Blood Rerun",
       "event_20200716_en": "Ink Stained Steel Sakura Rerun",
-      "raid_20200624": "Air Raid Drills with Essex Rerun",
       "event_20200611_en": "Skybound Oratorio",
       "event_20200603_en": "Prelude under the Moon Rerun",
       "event_20200521_en": "Iris of Light and Dark Rerun",
@@ -575,12 +599,12 @@
     },
     "MapAchievement": {
       "name": "Level Achievement",
-      "help": "Stop current task if level has been 100% Clear, 3 Stars, Threat Safe, or Threat Safe without 3 Stars. Non-stop implies no achievement required, thus task will not be stopped for this case",
-      "non_stop": "non_stop",
-      "100_percent_clear": "100_percent_clear",
-      "map_3_stars": "map_3_stars",
-      "threat_safe": "threat_safe",
-      "threat_safe_without_3_stars": "threat_safe_without_3_stars"
+      "help": "Stop current task if level has been 100% Clear, 3 Stars, Threat Safe, or Threat Safe without 3 Stars. Non-stop implies no achievement requirement and loops until different stop condition is met",
+      "non_stop": "Non-stop",
+      "100_percent_clear": "100% Clear",
+      "map_3_stars": "100% Clear + 3 Stars",
+      "threat_safe": "100% Clear + 3 Stars + Threat Safe",
+      "threat_safe_without_3_stars": "100% Clear + Threat Safe"
     },
     "StageIncrease": {
       "name": "Enable Continuous Clear",
@@ -1065,21 +1089,24 @@
       "name": "Use Cube",
       "help": "Allow to undertake projects that require cubes",
       "always_use": "Always Use",
-      "only_05_hour": "Only 0.5 Hour Researches",
+      "only_05_hour": "0.5 Hour+No project available",
+      "only_no_project": "Only no project available",
       "do_not_use": "Don't Use"
     },
     "UseCoin": {
       "name": "Use Coin",
       "help": "Allow to undertake projects that require coins",
       "always_use": "Always Use",
-      "only_05_hour": "Only 0.5 Hour Researches",
+      "only_05_hour": "0.5 Hour+No project available",
+      "only_no_project": "Only no project available",
       "do_not_use": "Don't Use"
     },
     "UsePart": {
       "name": "Use Part/Plate",
       "help": "Allow to undertake projects that require parts/plates",
       "always_use": "Always Use",
-      "only_05_hour": "Only 0.5 Hour Researches",
+      "only_05_hour": "0.5 Hour+No project available",
+      "only_no_project": "Only no project available",
       "do_not_use": "Don't Use"
     },
     "PresetFilter": {
@@ -1674,9 +1701,9 @@
       "name": "Repair Threshold",
       "help": "After completion of an OpSi map; if any one ship's HP is below threshold, retreat back to nearest port for repairs\n0.0 ~ 1.0"
     },
-    "BuyAkashiShop": {
-      "name": "Visit Akashi Shop",
-      "help": "After completion of an OpSi map; if detected, visit Akashi for exclusive limited items"
+    "DoRandomMapEvent": {
+      "name": "Do Random Map Events",
+      "help": "Rescan the whole map after auto search, purchase akashi's shop, use siren logging tower, use siren scanning device, unlock mechanism that require 2 fleets,"
     },
     "AkashiShopFilter": {
       "name": "Akashi Shop Filter",
@@ -1842,6 +1869,10 @@
     "RepairShip": {
       "name": "Repair Ships When Nearing Port",
       "help": "Once a fleet is in range of a port, Alas will enter, repair your ships, then exit\nWhen it is done, please move the fleet away and out of range from the port within 30s, otherwise the actions will be repeated"
+    },
+    "SelectEnemy": {
+      "name": "Clear nearby enemies and resources",
+      "help": "Clean nearby enemies and resources, and find new enemies or materials after cleaning, which usually clears the entire map. If some of them haven't been cleared, you need to solve them manually"
     }
   },
   "Benchmark": {

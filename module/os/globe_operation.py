@@ -130,7 +130,10 @@ class GlobeOperation(ActionPointHandler, MapEventHandler):
         Returns:
             list[Button]:
         """
-        return [select for select in ZONE_SELECT if self.appear(select, offset=self._zone_select_offset)]
+        # Lower threshold to 0.75
+        # Don't know why buy but fonts are different sometimes
+        return [select for select in ZONE_SELECT if
+                self.appear(select, offset=self._zone_select_offset, threshold=0.75)]
 
     def is_in_zone_select(self):
         """
@@ -260,8 +263,8 @@ class GlobeOperation(ActionPointHandler, MapEventHandler):
             in: is_in_globe
             out: is_in_map
         """
-        return self.ui_click(GLOBE_GOTO_MAP, check_button=self.is_in_map, offset=(200, 5),
-                             skip_first_screenshot=skip_first_screenshot)
+        return self.ui_click(GLOBE_GOTO_MAP, check_button=self.is_in_map, offset=(20, 20),
+                             retry_wait=3, skip_first_screenshot=skip_first_screenshot)
 
     def os_map_goto_globe(self, unpin=True, skip_first_screenshot=True):
         """

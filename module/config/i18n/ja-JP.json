@@ -376,33 +376,56 @@
       "name": "DropRecord.AzurStatsID.name",
       "help": "DropRecord.AzurStatsID.help"
     },
-    "SaveResearch": {
-      "name": "DropRecord.SaveResearch.name",
-      "help": "DropRecord.SaveResearch.help"
+    "API": {
+      "name": "DropRecord.API.name",
+      "help": "DropRecord.API.help",
+      "default": "default",
+      "cn_gz_reverse_proxy": "cn_gz_reverse_proxy",
+      "cn_sh_reverse_proxy": "cn_sh_reverse_proxy"
     },
-    "UploadResearch": {
-      "name": "DropRecord.UploadResearch.name",
-      "help": "DropRecord.UploadResearch.help"
+    "ResearchRecord": {
+      "name": "DropRecord.ResearchRecord.name",
+      "help": "DropRecord.ResearchRecord.help",
+      "do_not": "do_not",
+      "save": "save",
+      "upload": "upload",
+      "save_and_upload": "save_and_upload"
     },
-    "SaveCommission": {
-      "name": "DropRecord.SaveCommission.name",
-      "help": "DropRecord.SaveCommission.help"
+    "CommissionRecord": {
+      "name": "DropRecord.CommissionRecord.name",
+      "help": "DropRecord.CommissionRecord.help",
+      "do_not": "do_not",
+      "save": "save",
+      "upload": "upload",
+      "save_and_upload": "save_and_upload"
     },
-    "UploadCommission": {
-      "name": "DropRecord.UploadCommission.name",
-      "help": "DropRecord.UploadCommission.help"
+    "CombatRecord": {
+      "name": "DropRecord.CombatRecord.name",
+      "help": "DropRecord.CombatRecord.help",
+      "do_not": "do_not",
+      "save": "save"
     },
-    "SaveCombat": {
-      "name": "DropRecord.SaveCombat.name",
-      "help": "DropRecord.SaveCombat.help"
+    "OpsiRecord": {
+      "name": "DropRecord.OpsiRecord.name",
+      "help": "DropRecord.OpsiRecord.help",
+      "do_not": "do_not",
+      "save": "save",
+      "upload": "upload",
+      "save_and_upload": "save_and_upload"
     },
-    "SaveOpsi": {
-      "name": "DropRecord.SaveOpsi.name",
-      "help": "DropRecord.SaveOpsi.help"
+    "MeowfficerBuy": {
+      "name": "DropRecord.MeowfficerBuy.name",
+      "help": "DropRecord.MeowfficerBuy.help",
+      "do_not": "do_not",
+      "save": "save"
     },
-    "UploadOpsi": {
-      "name": "DropRecord.UploadOpsi.name",
-      "help": "DropRecord.UploadOpsi.help"
+    "MeowfficerTalent": {
+      "name": "DropRecord.MeowfficerTalent.name",
+      "help": "DropRecord.MeowfficerTalent.help",
+      "do_not": "do_not",
+      "save": "save",
+      "upload": "upload",
+      "save_and_upload": "save_and_upload"
     }
   },
   "Retirement": {
@@ -469,6 +492,8 @@
       "name": "Campaign.Event.name",
       "help": "Campaign.Event.help",
       "campaign_main": "campaign_main",
+      "raid_20200624": "特別演習超空強襲波（復刻）",
+      "event_20220428_cn": "吟ずる瑠璃の楽章",
       "event_20220414_cn": "極夜照らす幻光（復刻）",
       "event_20220407_tw": "蒼紅的迴響(復刻)",
       "event_20210422_cn": "讃える復興の迷路",
@@ -510,7 +535,6 @@
       "event_20201002_en": "Counterattack Within the Fjord",
       "event_20200820_cn": "黒鉄の楽章 誓いの海（復刻）",
       "event_20200716_en": "Ink Stained Steel Sakura Rerun",
-      "raid_20200624": "特別演習超空強襲波（復刻）",
       "event_20200611_en": "Skybound Oratorio",
       "event_20200603_en": "Prelude under the Moon Rerun",
       "event_20200521_en": "Iris of Light and Dark Rerun",
@@ -1066,6 +1090,7 @@
       "help": "Research.UseCube.help",
       "always_use": "always_use",
       "only_05_hour": "only_05_hour",
+      "only_no_project": "only_no_project",
       "do_not_use": "do_not_use"
     },
     "UseCoin": {
@@ -1073,6 +1098,7 @@
       "help": "Research.UseCoin.help",
       "always_use": "always_use",
       "only_05_hour": "only_05_hour",
+      "only_no_project": "only_no_project",
       "do_not_use": "do_not_use"
     },
     "UsePart": {
@@ -1080,6 +1106,7 @@
       "help": "Research.UsePart.help",
       "always_use": "always_use",
       "only_05_hour": "only_05_hour",
+      "only_no_project": "only_no_project",
       "do_not_use": "do_not_use"
     },
     "PresetFilter": {
@@ -1674,9 +1701,9 @@
       "name": "OpsiGeneral.RepairThreshold.name",
       "help": "OpsiGeneral.RepairThreshold.help"
     },
-    "BuyAkashiShop": {
-      "name": "OpsiGeneral.BuyAkashiShop.name",
-      "help": "OpsiGeneral.BuyAkashiShop.help"
+    "DoRandomMapEvent": {
+      "name": "OpsiGeneral.DoRandomMapEvent.name",
+      "help": "OpsiGeneral.DoRandomMapEvent.help"
     },
     "AkashiShopFilter": {
       "name": "OpsiGeneral.AkashiShopFilter.name",
@@ -1842,6 +1869,10 @@
     "RepairShip": {
       "name": "OpsiDaemon.RepairShip.name",
       "help": "OpsiDaemon.RepairShip.help"
+    },
+    "SelectEnemy": {
+      "name": "OpsiDaemon.SelectEnemy.name",
+      "help": "OpsiDaemon.SelectEnemy.help"
     }
   },
   "Benchmark": {
